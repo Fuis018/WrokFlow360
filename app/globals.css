@@ -16,7 +16,7 @@ body {
   font-weight: 500;
 }
 main {
-  height: calc(100vh - 181px);
+  min-height: calc(100vh - 181px);
 }
 a {
   text-decoration: none;
