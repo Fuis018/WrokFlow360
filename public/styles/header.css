@@ -1,0 +1,119 @@
+header, .header__inicio, .header__pages {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+header {
+  display: grid;
+  grid-template:
+    "logo logo" auto
+    "nav social" auto
+    / 1fr 2fr;
+  justify-content: center;
+  padding: 5px 0 10px 0;
+  background-color: #fff;
+  justify-items: center;
+}
+.header__inicio {
+  grid-area: logo;
+  padding-bottom: 10px;
+}
+.header__inicio-title {
+  color: var(--color-title);
+  text-align: center;
+  font-weight: bolder;
+}
+.header__inicio-title :nth-child(1) {
+  font-family: Brouwerij;
+  font-size: 1.9em;
+  font-weight: normal;
+}
+.header__inicio-title :nth-child(2) {
+  font-family: cursive;
+}
+.header__pages {
+  grid-area: nav;
+}
+.header__pages svg {
+  cursor: pointer;
+}
+.header__pages__nav-content {
+  background-color: #fff;
+  color: #000;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  padding: 10px;
+  z-index: 1000;
+}
+.header__pages__nav-block {
+  display: block;
+}
+.header__pages__nav-none {
+  display: none;
+}
+.header__pages__nav-pages {
+  display: flex;
+  padding-top: 50px;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.5em;
+}
+.header__social {
+  grid-area: social;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+.social-i {
+  fill: #f00075;
+}
+.social-f {
+  fill: #1778f2;
+}
+.social-x svg {
+  width: 22px;
+  height: 22px;
+}
+.social-w {
+  fill: #25d366;
+}
+@media (min-width: 400px) {
+  header {
+    grid-template-columns: 2fr 1fr;
+  }
+  header, .header__inicio, .header__pages {
+    flex-direction: row;
+  }
+  .header__pages__nav-svg {
+    display: none;
+  }
+  .header__pages__nav-content {
+    gap: 0 12px;
+    position: static;
+  }
+  .header__pages__nav-pages {
+    font-size: 1em;
+    padding: 0;
+    flex-direction: row;
+  }
+  .header__pages__nav-block, .header__pages__nav-none {
+    display: flex;
+  }
+}
+@media (min-width: 760px) {
+  header {
+    grid-template: "logo nav social" auto / auto auto auto;
+    gap: 7%;
+  }
+  .header__inicio {
+    padding-bottom: 0;
+  }
+  .header__social {
+    margin-right: 20px;
+    scale: 1.2;
+  }
+}
